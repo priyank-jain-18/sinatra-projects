@@ -3,7 +3,7 @@ def caesar_cipher (string, number)
 
     string.scan(/./) do |i|
         if("a".."z").includes?(i.downcase)
-            number.times = {i=i.next}
+            number.times{i=i.next}
         end
         caesar_string << i[-1] 
     end
