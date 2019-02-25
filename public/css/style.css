@@ -1,0 +1,70 @@
+body {
+	background-color: #f2f2f2;
+	text-align: center;
+
+}
+
+#options {  
+  top: 50%;
+ 
+}
+
+button {
+  margin: 23px;
+  font-size: 22px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  background-color: blue;
+  width: 175px;
+  height: 75px;
+}
+
+
+#apply{
+  margin: 23px;
+  font-size: 22px;
+  border: none;
+  color: white;
+  text-decoration: none;
+  background-color: blue;
+  width: 175px;
+  height: 75px;
+}
+
+#output_caesar{
+  position: relative;
+  border: ridge;
+  height: 100px;
+  width: 600px;
+  margin: auto;
+  color: white;
+
+}
+
+#caesar_string {
+  font-size: 42px;
+}
+
+#output_hangman{
+  position: relative;
+  border: groove;
+  height: 601px;
+  width: 450px;
+  margin: auto;
+
+}
+
+.stats {
+
+   margin-bottom: -30px;
+   margin-top: -35px;
+}
+
+#stats {
+  display: inline-block;  
+  height: 30px;
+  margin: 30px;
+
+ 
+}
