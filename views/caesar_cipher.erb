@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <link type="text/css" rel="stylesheet" href="/css/style.css">
+    </head>
+    <body>
+        <div id = "main_div_c"> 
+            <h1>Caesar Cipher</h1>
+            <form method="post" action ="/runcaesar">
+                String: <input type="text" id="str" name = "str" >
+                Number: <input type="number" id="vals" value="5" name = "vals">
+                <button type="submit" id="apply">APPLY</button>
+            </form>
+
+            <div id = "output_caesar"> 
+            <p id = "caesar_string"><%= translation %></p>
+            </div>      
+        </div>
+    
+        <form method="post" action="/backMenu">
+            <button type="submit" id="back_to_main">BACK</button>
+        </form>
+    </body>
+</html>
