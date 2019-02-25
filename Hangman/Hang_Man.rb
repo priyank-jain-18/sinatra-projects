@@ -1,24 +1,26 @@
 class Hangman
-    attr_accessor :misses, :correct, :turns, :random_word, :coded_word, :missed_letters
-    def intialize
-        @misses = 0
-        @turns = 0
-        @correct = 0
+	attr_accessor :misses, :correct, :random_word, :coded_word, :missed_words, :turns
 
-        @random_word = ''
+	def initialize
+		@misses = 0
+		@correct = 0
+		@turns = 0
+
+		@random_word = ''
 		@coded_word = nil
-		@missed_letters = Array.new
-    end
+		@missed_words = Array.new
+	end
 
     def generate_hangman_word
-        words = File.readlines('dictionary.txt')
-        not_good_word = true
-    
-        while not_good_word
-            picked_word = words[rand(words.size)].gsub(/\s+/, "")
-            not_good_word = false if picked_word.length >= 5 && picked_word.length <= 12
-        end
-        @coded_word = "_" * picked_word.gsub(/\s+/, "").length
+    	words = File.readlines('Hangman/dictionary.txt')
+    	not_good_word = true
+    	
+    	while not_good_word
+    		picked_word = words[rand(words.size)].gsub(/\s+/, "")
+    		not_good_word = false if picked_word.length >= 5 && picked_word.length <= 12
+    	end
+    	@coded_word = "_" * picked_word.gsub(/\s+/, "").length
+
        	@random_word = picked_word.gsub(/\s+/, "")
     end
 

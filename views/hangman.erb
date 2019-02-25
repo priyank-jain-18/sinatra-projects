@@ -1,0 +1,51 @@
+<html>
+
+    <body>
+    <div id = "main_div_h"> 
+
+      <h1>HANGMAN</h1>
+
+      <%if session["game"].win? == true || session["game"].lose? == true %>
+        <%if session["game"].win? == true%>
+          <h2>YOU WON THE GAME!</h2>
+        <%elsif session["game"].lose? == true%>
+          <h2>You lost the game, the correct word is: <%= session["game"].random_word%> 
+        <%end%>
+
+        <form method="post" action="/playhangman">     
+          <button type="submit" id="apply">NEW GAME?</button>
+        </form>
+      <%end%>
+
+      <% if @play == false%>
+        <form method="post" action="/playhangman">
+          <button type="submit" id="apply">PLAY GAME</button>
+        </form>
+      <% end%>
+
+      <% if @play == true  && session["game"].win? == false && session["game"].lose? == false%>
+        <h2><%= @secret_code %></h2>    
+        <form method="post" action="/runhangman">
+          LETTER: <input type="text" id="str" name = "str" >
+          <button type="submit" id="apply">GUESS!</button>
+        </form>
+    
+        <div class = "stats">
+          <p id ="stats">Misses: <%= @guess%></p>   
+          <p id ="stats">Number of Corrects: <%= @turns%></p>
+          <p id ="stats">Wrong Letters: <%= @missed%></p>
+        </div>
+      <%end%>
+
+      <div id = "output_hangman"> 
+        <p id = "hang_out"><%= @output %></p>
+      </div>      
+
+    </div>
+    
+      <form method="post" action="/backMenu">
+        <button type="submit" id="back_to_main">BACK</button>
+      </form>
+    </body>
+
+</html>
